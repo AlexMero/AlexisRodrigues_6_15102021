@@ -1,0 +1,16 @@
+.fixedRectangle{
+    width: 25%;
+    height: 50px;
+    background-color: $couleurSecondaireBack;
+    position: fixed;
+    bottom: 0;
+    right: 5%;
+    /* padding: 0.5rem; */
+    border-radius: 0.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-family: $familyFont;
+    font-size: 1.5rem;
+    font-weight: 500;
+}

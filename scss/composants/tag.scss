@@ -1,0 +1,15 @@
+span.tagSpan{
+    font-family: $familyFont;
+    font-weight: 500;
+    margin: 0.1rem;
+    padding: 0.2rem;
+    color: $couleurSecondaireFont;
+    border: 0.5px solid #C4C4C4;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    &:hover, &.focusedTag{
+        color: white;
+        background-color: $couleurPrimaireBack;
+        border: 0.5px solid white;
+    }
+}

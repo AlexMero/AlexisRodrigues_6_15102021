@@ -1,0 +1,41 @@
+.mediaCardContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    .mediaCard{
+        width: 26%;
+        height: auto;
+        display: grid;
+        grid-template-areas: "image image" "titre likes";
+        grid-template-rows: auto 3rem;
+        margin-bottom: 1rem;
+        font-family: $familyFont;
+        video, .imgMedia{
+            grid-area: image;
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 0.2rem;
+            &:focus{
+                outline: none;
+            }
+        }
+        span, .heartContainer{
+            display: flex;
+            align-items: center;
+        }
+        .titreMedia{
+            grid-area: titre;
+            color: $couleurSecondaireFont;
+        }
+        .likesMedia, .heartContainer{
+            grid-area: likes;
+            justify-content: flex-end;
+            color: $couleurSecondaireFont;
+            i{
+                margin-left: 1rem;
+            }
+        }
+    }
+}

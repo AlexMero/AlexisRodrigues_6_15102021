@@ -1,0 +1,55 @@
+.mediaPopup{
+    display: block;
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 40px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: scroll;
+    background-color: white;
+
+    .contentPopup{
+        background-color: #fefefe;
+        margin: auto;
+        width: 80%;
+        display: grid;
+        grid-template-areas: ". media cross" "leftArrow media rightArrow" ". title .";
+        grid-template-rows: 3rem auto auto;
+        grid-template-columns: 10% auto 10%;
+        video, .imgMediaPopup{
+            grid-area: media;
+            width: 100%;
+            margin: auto;
+            height: 80vh;
+            object-fit: cover;
+        }
+        .titreMediaPopup{
+            grid-area: title;
+            width: 100%;
+            margin: auto;
+            padding: 10px;
+            font-family: $familyFont;
+            font-size: 1rem;
+            color: $couleurSecondaireFont;
+        }
+        .iconContent{
+            color: $couleurSecondaireFont;
+            font-size: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .leftArrowContent{
+            grid-area: leftArrow;
+        }
+        .rightArrowContent{
+            grid-area: rightArrow;
+        }
+        .crossContent{
+            grid-area: cross;
+        }
+        
+    }
+}

@@ -1,0 +1,32 @@
+dropdown {
+    display: block;
+    height: 3rem;
+    margin: 0;
+    padding: 0;
+    border-radius: 0.5rem;
+}
+
+filter {
+    background-color: $couleurPrimaireBack;
+    width: 7rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: white;
+    position: relative;
+    // border-top: 1px solid white;
+    i{
+        padding-left: 1rem;
+    }
+    &:before{
+        content: "";
+        position: absolute;
+        left: 5%;
+        bottom: 3rem;
+        height: 1px;
+        width: 90%;
+        border-top: 2px solid white;
+    }
+}

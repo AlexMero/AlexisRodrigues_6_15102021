@@ -1,0 +1,48 @@
+main.home{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    article.photographerCard{
+        font-family: $familyFont;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: column nowrap;
+        width: 33%;
+        margin-top: 2rem;
+        img{
+            width: 12.5rem;
+            height: 12.5rem;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+        h2{
+            font-size: 36px;
+            line-height: 47px;
+            font-weight: 400;
+            color: $couleurPrimaireFont;
+            margin: 0;
+        }
+        .location{
+            font-size: 13px;
+            line-height: 17px;
+            color: $couleurSecondaireFont;
+            font-weight: 400;
+        }
+        .tagline{
+            font-size: 10px;
+            line-height: 13px;
+            margin: 0.2rem;
+        }
+        .price{
+            font-size: 9px;
+            line-height: 12px;
+            color: #757575;
+        }
+        .contentTag{
+            margin-top: 0.3rem;
+        }
+    }
+}

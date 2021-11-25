@@ -1,0 +1,16 @@
+main.photographer{
+    width: 85%;
+    margin: auto;
+    section.sectionSelect{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        font-family: $familyFont;
+        font-size: 1rem;
+        label{
+            margin-right: 2rem;
+            font-weight: bolder;
+        }
+    }
+}
