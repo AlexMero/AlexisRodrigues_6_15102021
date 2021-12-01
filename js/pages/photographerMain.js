@@ -61,13 +61,43 @@ function sectionSelect(domTarget) {
     
 
     sectionSelect.appendChild(label);
-    new Dropdown(sectionSelect, ["Popularité", "Dates", "Titre"])
+    new Dropdown(sectionSelect, ["Popularité", "Dates", "Titre"], updateFilter.bind(this), domTarget);
 
     domTarget.appendChild(sectionSelect);
 }
 
 function updateLikes(inc){
     totalLikes+= inc ? 1 : -1;
-    console.log(totalLikes);
-    // render();
+}
+
+function updateFilter(filter, DOM){
+    photographerMediaList.sort(function compare(a, b) {
+        if (filter == "Dates") {
+            if (a.date < b.date){
+                return -1;
+            }
+            if (a.date > b.date ){
+                return 1;
+            }
+            return 0;
+        }else if (filter == "Titre") {
+            if (a.title < b.title){
+                return -1;
+            }
+            if (a.title > b.title ){
+                return 1;
+            }
+            return 0;
+        }else if (filter == "Popularité") {
+            if (a.likes > b.likes){
+                return -1;
+            }
+            if (a.likes < b.likes ){
+                return 1;
+            }
+            return 0;
+        } 
+    });
+    
+    render(DOM);
 }

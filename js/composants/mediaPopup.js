@@ -34,18 +34,19 @@ export default class mediaPopup extends Component{
         this.crossContent = this.elementWithClass("span", "crossContent iconContent");
         this.crossContent.appendChild(this.elementWithClass("i", "fas fa-times"));
 
+
         this.DOM.onclick = this.click.bind(this);
         this.render();
     }
 
     render(){
-        const contentPopup = document.createElement("div");
-        contentPopup.className = "contentPopup";
-        contentPopup.innerHTML = this.image ? this.templateImage : this.templateVideo;
-        contentPopup.appendChild(this.leftArrowContent);
-        contentPopup.appendChild(this.rightArrowContent);
-        contentPopup.appendChild(this.crossContent);
-        this.DOM.appendChild(contentPopup);
+        this.contentPopup = document.createElement("div");
+        this.contentPopup.className = "contentPopup";
+        this.contentPopup.innerHTML += this.image ? this.templateImage : this.templateVideo;
+        this.contentPopup.appendChild(this.leftArrowContent);
+        this.contentPopup.appendChild(this.rightArrowContent);
+        this.contentPopup.appendChild(this.crossContent);
+        this.DOM.appendChild(this.contentPopup);
     }
 
     get templateVideo() {
@@ -73,7 +74,7 @@ export default class mediaPopup extends Component{
     }
 
     click(event){
-        if (event.path[0] == this.DOM){
+        if (event.path[0] == this.DOM || event.path.includes(this.crossContent)){
             this.DOM.remove();
         }
     }

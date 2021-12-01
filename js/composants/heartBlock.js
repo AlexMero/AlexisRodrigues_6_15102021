@@ -31,7 +31,8 @@ export default class heartBlock extends Component{
         this.DOM.innerHTML = /*html*/ `${this.likes} <i class="fa${this.liked?"s":"r"} fa-heart"></i>`;
     }
 
-    updateLikes(){
+    updateLikes(event){
+        event.stopPropagation();
         this.liked = !this.liked;
         this.likes += this.liked? 1 : -1;
         this.callback(this.liked);

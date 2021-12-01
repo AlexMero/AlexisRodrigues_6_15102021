@@ -1,4 +1,5 @@
 import { tag } from "../composants/tag.js";
+import contactPopup from "./contactPopup.js";
 
 export class PhotographerCard {
     /**
@@ -13,7 +14,7 @@ export class PhotographerCard {
         this.photographer = photographer;
         this.idPhotoTarget = "../images/Sample Photos/Photographers ID Photos/"+ photographer.name.replace(" ", "").replace("-", "") +".jpg";
         this.domTarget = domTarget;
-        this.DOM = document.createElement("article");
+        this.DOM = document.createElement("section");
         this.DOM.classList.add("photographerCard");
         this.contentTag = document.createElement("div");
         this.contentTag.classList.add("contentTag");
@@ -21,9 +22,11 @@ export class PhotographerCard {
     }
     
     render() {
-        this.DOM.innerHTML = `
+        
+        this.DOM.innerHTML = /* html */
+        `
             <img src='${this.idPhotoTarget}' class='imgPhotographer'>
-            <button>Contactez-moi</button>
+            <button id="contactPopupBtn">Contactez-moi</button>
             <div class='container'>
                 <h2>${this.photographer.name}</h2>
                 <span class='location'>${this.photographer.city}, ${this.photographer.country}</span>
@@ -35,6 +38,11 @@ export class PhotographerCard {
             new tag(tagName, this.contentTag, false, false);
         });
         this.domTarget.appendChild(this.DOM);
-        document.querySelector("article.photographerCard div.container").appendChild(this.contentTag);
+        document.querySelector("section.photographerCard div.container").appendChild(this.contentTag);
+        document.querySelector("#contactPopupBtn").addEventListener("click", event => {this.contactClick()});
+    }
+
+    contactClick(){
+        new contactPopup(document.body, this.photographer);
     }
 }

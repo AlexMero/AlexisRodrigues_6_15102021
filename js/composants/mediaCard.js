@@ -69,7 +69,6 @@ export default class mediaCard extends Component{
     }
 
     click(event){
-        console.log(event);
         new mediaPopup(document.body, this.media, this.photographerName);
     }
 }
