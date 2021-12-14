@@ -1,7 +1,8 @@
 import Component from "./component.js";
-export default class fixedRectangle extends Component {
+export default class FixedRectangle extends Component {
 
     totalLikes;
+
     prix;
 
     /**

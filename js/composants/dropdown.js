@@ -1,6 +1,4 @@
 export class Dropdown{
-    
-    
 
     /**
      * [constructor description]
@@ -37,7 +35,7 @@ export class Dropdown{
         this.filters.forEach(filter => {
             if (cpt === 1){
                 this.addFilter(filter, this.chevronUp);
-            }else{
+            } else {
                 this.addFilter(filter);
             }
             cpt = cpt+1;
@@ -49,7 +47,7 @@ export class Dropdown{
         const filter = document.createElement("filter");
         filter.innerHTML = name+chevron;
         // filter.onclick = ()=>this.click(name);
-        filter.addEventListener("click", event => {this.click(name, event)});
+        filter.addEventListener("click", event => {this.click(name, event);});
         this.DOM.appendChild(filter);
     }
 
@@ -59,7 +57,7 @@ export class Dropdown{
         this.active = !this.active;
         if (!this.active) {
             this.selected = filter;
-            this.callback(filter, this.parentDOM);    
+            this.callback(filter, this.parentDOM);
         }
         this.render();
     }

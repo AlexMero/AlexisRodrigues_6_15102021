@@ -1,13 +1,21 @@
 import Component from "./component.js";
-export default class contactPopup extends Component{
+export default class ContactPopup extends Component{
     name;
+
     id;
+
     city;
+
     country;
+
     tags;
+
     tagline;
+
     price;
+
     portrait;
+
     constructor(domTarget, props){
         super(domTarget, "section");
         this.hydrate(props);
@@ -60,7 +68,7 @@ export default class contactPopup extends Component{
     }
 
     click(event){
-        if (event.path[0] == this.DOM || event.path.includes(this.crossContent)){
+        if (event.path[0] === this.DOM || event.path.includes(this.crossContent)){
             this.DOM.remove();
         }
     }
@@ -68,10 +76,10 @@ export default class contactPopup extends Component{
     submit(event){
         event.stopPropagation();
         event.preventDefault();
-        let prenom = event.srcElement[0].value;
-        let nom = event.srcElement[1].value;
-        let email = event.srcElement[2].value;
-        let msg = event.srcElement[3].value;
+        const prenom = event.srcElement[0].value;
+        const nom = event.srcElement[1].value;
+        const email = event.srcElement[2].value;
+        const msg = event.srcElement[3].value;
 
         console.log("Prénom => ", prenom, "\r\n","Nom => ", nom, "\r\n","Email => ", email, "\r\n","Message => ", msg, "\r\n",);
     }

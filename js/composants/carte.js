@@ -1,4 +1,3 @@
-
 let props;
 const DOM = document.createElement("article");
 DOM.onclick = click;

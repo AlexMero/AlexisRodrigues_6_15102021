@@ -1,5 +1,4 @@
-import { tag } from "../composants/tag.js";
-import contactPopup from "./contactPopup.js";
+import ContactPopup from "./contactPopup.js";
 
 export class PhotographerCard {
     /**
@@ -20,9 +19,9 @@ export class PhotographerCard {
         this.contentTag.classList.add("contentTag");
         this.render();
     }
-    
+
     render() {
-        
+
         this.DOM.innerHTML = /* html */
         `
             <img src='${this.idPhotoTarget}' class='imgPhotographer'>
@@ -34,15 +33,15 @@ export class PhotographerCard {
             </div>
         `;
 
-        this.photographer.tags.forEach(tagName => {
-            new tag(tagName, this.contentTag, false, false);
-        });
+        // this.photographer.tags.forEach(tagName => {
+        //     new tag(tagName, this.contentTag, false, false);
+        // });
         this.domTarget.appendChild(this.DOM);
         document.querySelector("section.photographerCard div.container").appendChild(this.contentTag);
-        document.querySelector("#contactPopupBtn").addEventListener("click", event => {this.contactClick()});
+        document.querySelector("#contactPopupBtn").addEventListener("click", this.contactClick);
     }
 
     contactClick(){
-        new contactPopup(document.body, this.photographer);
+        new ContactPopup(document.body, this.photographer);
     }
 }

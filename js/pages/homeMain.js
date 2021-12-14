@@ -1,9 +1,8 @@
+import {HomePhotographerCard} from "../composants/homePhotographerCard.js";
 import {getAllData} from "../services/dataManager.js";
-import {homePhotographerCard} from "../composants/homePhotographerCard.js";
 
 let DOM;
 let data;
-let idPhotoTarget;
 let listFocused;
 let listTag = [];
 
@@ -27,7 +26,7 @@ export async function homeMain(domTarget) {
 
 function render() {
     DOM.innerHTML = "";
-    
+
     data.photographers.forEach(photographer => {
         let showThis = "false";
         if (listTag.length >= 1){
@@ -38,11 +37,10 @@ function render() {
                 }
             });
             if (showThis === "true"){
-                new homePhotographerCard(photographer, DOM, listTag);
-            }          
-        }else{
-            new homePhotographerCard(photographer, DOM);
+                new HomePhotographerCard(photographer, DOM, listTag);
+            }
+        } else {
+            new HomePhotographerCard(photographer, DOM);
         }
     });
 }
-

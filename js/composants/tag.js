@@ -1,6 +1,6 @@
 import { homeMain } from "../pages/homeMain.js";
 
-export class tag{
+export class Tag{
     /**
      * tag constructor
      *
@@ -21,6 +21,7 @@ export class tag{
         }
         if (click === true) {
             this.DOM.onclick = this.click.bind(this);
+            this.DOM.setAttribute("tabindex", "0");
         }
         this.domTarget.appendChild(this.DOM);
         this.render();
@@ -31,13 +32,13 @@ export class tag{
     }
 
     click(){
-        let listToFocus = document.getElementsByClassName(this.content.toLowerCase());
+        const listToFocus = document.getElementsByClassName(this.content.toLowerCase());
         if (this.DOM.classList.contains("focusedTag")){
-            for (let element of listToFocus){
+            for (const element of listToFocus){
                 element.classList.remove("focusedTag");
             }
-        }else{
-            for (let element of listToFocus){
+        } else {
+            for (const element of listToFocus){
                 element.classList.add("focusedTag");
             }
         }

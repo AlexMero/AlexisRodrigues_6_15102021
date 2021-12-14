@@ -6,16 +6,21 @@ export default class heartBlock extends Component{
      * @type {Function}
      */
     callback;
+
     likes;
+
+    originTarget;
+
     liked=false;
 
     /**
      * [constructor description]
      *
-     * @param   {HTMLElement}  domTarget  [domTarget description]
-     * @param   {Object}    props      fonction a appeler au 
-     * @param   {Function}  props.callback
-     * @param   {Number}    props.likes
+     * @param   {HTMLElement}       domTarget  [domTarget description]
+     * @param   {Object}            props      fonction a appeler au
+     * @param   {Function}          props.callback
+     * @param   {Number}            props.likes
+     * @param   {HTMLElement}       props.originTarget
      *
      * @constructor
      */
@@ -35,7 +40,7 @@ export default class heartBlock extends Component{
         event.stopPropagation();
         this.liked = !this.liked;
         this.likes += this.liked? 1 : -1;
-        this.callback(this.liked);
+        this.callback(this.liked, this.originTarget);
         this.render();
     }
 }

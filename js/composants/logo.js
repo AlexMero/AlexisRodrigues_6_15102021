@@ -1,4 +1,4 @@
-export class logo {
+export class Logo {
     /**
      * Constructeur logo
      *

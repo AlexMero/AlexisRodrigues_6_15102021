@@ -1,5 +1,3 @@
-
-
 /**
  * @typedef {import("../../typedef.js").mediaList}  mediaList
  */
@@ -16,7 +14,7 @@ let data;
  */
 function initDataManager(src) {
     source = src;
-};
+}
 
 async function getAllData() {
     const answer = await fetch(source);
@@ -33,9 +31,9 @@ async function getAllData() {
  */
 async function getPhotographerData(id){
     let thisPhotographer;
-    let datas = await getAllData();
+    const datas = await getAllData();
     datas.photographers.forEach(photographer => {
-        if (photographer.id == id){
+        if (photographer.id === id){
             thisPhotographer = photographer;
         }
     });
@@ -48,10 +46,10 @@ async function getPhotographerData(id){
  * @return  {Promise}      [return description]
  */
 async function getAllTags(){
-    let tagsList = [];
-    let datas = await getAllData();
+    const tagsList = [];
+    const datas = await getAllData();
     datas.media.forEach(media => {
-        let mediaTag = media.tags[0];
+        const mediaTag = media.tags[0];
         if (!tagsList.includes(mediaTag)) {
             tagsList.push(mediaTag);
         }
@@ -67,15 +65,32 @@ async function getAllTags(){
  * @return  {Promise.<mediaList>}      [return description]
  */
 async function getPhotographerMedia(id){
-    let mediaList = [];
-    let datas = await getAllData();
+    const mediaList = [];
+    const datas = await getAllData();
     datas.media.forEach(media => {
-        let mediaPhotographerId = media.photographerId;
-        if (mediaPhotographerId == id) {
+        const mediaPhotographerId = media.photographerId;
+        if (mediaPhotographerId === id) {
             mediaList.push(media);
         }
     });
     return mediaList;
+}
+
+async function getPopupMedia(photographerId, mediaId){
+    let mediaResult = {};
+    let nextID = 0;
+    let prevID = 0;
+    const mediaList = await getPhotographerMedia(photographerId);
+    for (let i = 0; i < mediaList.length; i++) {
+        const media = mediaList[i];
+        if (media.id === mediaId) {
+            mediaResult = media;
+            nextID = mediaList[i+1] ? mediaList[i+1].id : mediaList[0].id;
+            prevID = mediaList[i-1] ? mediaList[i-1].id : mediaList[mediaList.length - 1].id;
+        }
+
+    }
+    return {...mediaResult, "nextID": nextID, "prevID": prevID};
 }
 
 export {
@@ -84,4 +99,5 @@ export {
     getPhotographerData,
     getAllTags,
     getPhotographerMedia,
-}
+    getPopupMedia,
+};

@@ -1,13 +1,14 @@
-import {logo} from "../composants/logo.js";
+import {Logo} from "../composants/logo.js";
 
-let img = { location: "../images/logo/logoFishEye.png", alt: "Fisheye Home page" };
+const img = {alt: "Fisheye Home page", location: "../images/logo/logoFishEye.png"};
 
 /**
  * Create photographerPage header
  *
- * @return  {void}  
+ * @return  {void}
  */
 export function photographerHeader(domTarget){
-    let DOM = domTarget;
-    new logo(img, DOM);
+    const DOM = domTarget;
+    DOM.className = "photographerHeader";
+    new Logo(img, DOM);
 }

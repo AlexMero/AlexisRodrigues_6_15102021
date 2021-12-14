@@ -1,6 +1,6 @@
-import { tag } from "../composants/tag.js";
+import { Tag } from "../composants/tag.js";
 
-export class homePhotographerCard {
+export class HomePhotographerCard {
     /**
      * Constructeur card photographer in homePage
      *
@@ -13,13 +13,14 @@ export class homePhotographerCard {
         this.photographer = photographer;
         this.idPhotoTarget = "../images/Sample Photos/Photographers ID Photos/"+ photographer.name.replace(" ", "").replace("-", "") +".jpg";
         this.domTarget = domTarget;
-        this.listTag = listTag
+        this.listTag = listTag;
         this.DOM = document.createElement("article");
+        this.DOM.setAttribute("tabindex", "0");
         this.DOM.classList.add("photographerCard");
         this.contentTag = document.createElement("div");
         this.contentTag.classList.add("contentTag");
         // @ts-ignore
-        this.DOM.onclick = ()=>window.changePage("photographer", this.photographer.id);
+        this.DOM.onclick = () => window.changePage("photographer", this.photographer.id);
         this.render();
     }
 
@@ -34,15 +35,14 @@ export class homePhotographerCard {
 
         this.photographer.tags.forEach(tagName => {
             if (this.listTag.includes(tagName)){
-                new tag(tagName, this.contentTag, true, false);
-            }else{
-                new tag(tagName, this.contentTag, false, false);
+                new Tag(tagName, this.contentTag, true, false);
+            } else {
+                new Tag(tagName, this.contentTag, false, false);
             }
-            
+
         });
         this.DOM.appendChild(this.contentTag);
         this.domTarget.appendChild(this.DOM);
     }
-
 
 }
