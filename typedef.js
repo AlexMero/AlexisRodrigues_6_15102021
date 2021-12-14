@@ -10,18 +10,16 @@
  * @property {Number} likes          exemple 11,
  * @property {String} date           exemple "2011-11-06",
  * @property {Number} price          exemple 55
- * 
- * 
- * 
+ *
+ *
+ *
  * @typedef {Object}    callbackFunction
  * @property {Function} callback
- * 
- * 
- * 
+ *
+ *
+ *
  * @typedef {Array.<media>}  mediaList
- * 
+ *
  */
 
-
-
-module.exports = {}
+module.exports = {};
