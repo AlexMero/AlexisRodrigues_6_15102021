@@ -35,7 +35,7 @@ export default class heartBlock extends Component{
     }
 
     render(){
-        this.DOM.innerHTML = /*html*/ `${this.likes} <i class="fa${this.liked?"s":"r"} fa-heart"></i>`;
+        this.DOM.innerHTML = /*html*/ `${this.likes} <em class="fa${this.liked?"s":"r"} fa-heart"></em>`;
     }
 
     updateLikes(event){

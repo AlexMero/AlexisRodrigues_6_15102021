@@ -26,7 +26,7 @@ export default class FixedRectangle extends Component {
         this.DOM.innerHTML = /* html*/ `
             <span class="totalLikes">
                 ${this.totalLikes}
-                <i class="fas fa-heart"></i>
+                <em class="fas fa-heart"></em>
             </span>
             <span class="prix">
                 ${this.prix}€ / jour

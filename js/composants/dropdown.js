@@ -15,8 +15,8 @@ export class Dropdown{
         this.selected = filters[0];
         this.callback = callback;
         this.parentDOM = parentDOM;
-        this.chevronDown = "<i class='fas fa-chevron-down'></i>";
-        this.chevronUp = "<i class='fas fa-chevron-up'></i>";
+        this.chevronDown = "<em class='fas fa-chevron-down'></em>";
+        this.chevronUp = "<em class='fas fa-chevron-up'></em>";
         this.DOM = document.createElement("dropdown");
         domTarget.appendChild(this.DOM);
         this.active = false;
