@@ -70,7 +70,7 @@ export default class MediaCard extends Component{
 
     get templateVideo() {
         return `
-        <video>
+        <video tabindex="0">
             <source src="${this.videoTarget}" type="video/mp4">
             Sorry, your browser doesn't support embedded videos.
         </video>
@@ -81,7 +81,7 @@ export default class MediaCard extends Component{
 
     get templateImage() {
         return `
-        <img src="${this.imageTarget}" class="imgMedia">
+        <img src="${this.imageTarget}" class="imgMedia" tabindex="0">
         <span class="titreMedia">${this.title}</span>
         `;
     }

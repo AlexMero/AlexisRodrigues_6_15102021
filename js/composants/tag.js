@@ -16,10 +16,10 @@ export class Tag{
         this.DOM = document.createElement("span");
         this.DOM.classList.add("tagSpan");
         this.DOM.classList.add(this.content.toLowerCase());
-        if (taged === true){
+        if (taged == true){
             this.DOM.classList.add("focusedTag");
         }
-        if (click === true) {
+        if (click == true) {
             this.DOM.onclick = this.click.bind(this);
             this.DOM.setAttribute("tabindex", "0");
         }

@@ -33,7 +33,7 @@ export class Dropdown{
         this.DOM.className= "";
         let cpt = 1;
         this.filters.forEach(filter => {
-            if (cpt === 1){
+            if (cpt == 1){
                 this.addFilter(filter, this.chevronUp);
             } else {
                 this.addFilter(filter);
@@ -45,6 +45,7 @@ export class Dropdown{
 
     addFilter(name, chevron = ""){
         const filter = document.createElement("filter");
+        filter.setAttribute("tabindex", "0");
         filter.innerHTML = name+chevron;
         // filter.onclick = ()=>this.click(name);
         filter.addEventListener("click", event => {this.click(name, event);});

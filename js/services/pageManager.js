@@ -57,7 +57,7 @@ export class PageManager{
     definePage(){
         // eslint-disable-next-line prefer-const
         let  [requestedPage, args] = window.location.search.slice(1).split("/");
-        if (requestedPage === "") requestedPage = "index";
+        if (requestedPage == "") requestedPage = "index";
         this.route(requestedPage, args);
     }
 }

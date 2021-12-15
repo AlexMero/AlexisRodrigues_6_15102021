@@ -92,7 +92,7 @@ export default class MediaPopup extends Component{
     }
 
     click(event){
-        if (event.path[0] === this.DOM || event.path.includes(this.crossContent)){
+        if (event.path[0] == this.DOM || event.path.includes(this.crossContent)){
             this.DOM.remove();
         }
         if (event.path.includes(this.rightArrowContent)){
@@ -110,12 +110,12 @@ export default class MediaPopup extends Component{
     }
 
     listenKey(evt){
-        if (evt.keyCode === 39) {
+        if (evt.keyCode == 39) {
             // @ts-ignore
             // console.log(this)
             this.updateMedia(this.nextID);
         }
-        if (evt.keyCode === 37) {
+        if (evt.keyCode == 37) {
             // @ts-ignore
             this.updateMedia(this.prevID);
         }

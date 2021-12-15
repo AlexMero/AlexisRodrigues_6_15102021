@@ -33,7 +33,7 @@ async function getPhotographerData(id){
     let thisPhotographer;
     const datas = await getAllData();
     datas.photographers.forEach(photographer => {
-        if (photographer.id === id){
+        if (photographer.id == id){
             thisPhotographer = photographer;
         }
     });
@@ -69,7 +69,7 @@ async function getPhotographerMedia(id){
     const datas = await getAllData();
     datas.media.forEach(media => {
         const mediaPhotographerId = media.photographerId;
-        if (mediaPhotographerId === id) {
+        if (mediaPhotographerId == id) {
             mediaList.push(media);
         }
     });
@@ -83,7 +83,7 @@ async function getPopupMedia(photographerId, mediaId){
     const mediaList = await getPhotographerMedia(photographerId);
     for (let i = 0; i < mediaList.length; i++) {
         const media = mediaList[i];
-        if (media.id === mediaId) {
+        if (media.id == mediaId) {
             mediaResult = media;
             nextID = mediaList[i+1] ? mediaList[i+1].id : mediaList[0].id;
             prevID = mediaList[i-1] ? mediaList[i-1].id : mediaList[mediaList.length - 1].id;

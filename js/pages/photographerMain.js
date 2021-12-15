@@ -82,7 +82,7 @@ function updateLikes(inc, target){
 function updateFilter(filter, DOM){
     // eslint-disable-next-line complexity
     photographerMediaList.sort(function compare(a, b) {
-        if (filter === "Dates") {
+        if (filter == "Dates") {
             if (a.date < b.date){
                 return -1;
             }
@@ -90,7 +90,7 @@ function updateFilter(filter, DOM){
                 return 1;
             }
             return 0;
-        } else if (filter === "Titre") {
+        } else if (filter == "Titre") {
             if (a.title < b.title){
                 return -1;
             }
@@ -98,7 +98,7 @@ function updateFilter(filter, DOM){
                 return 1;
             }
             return 0;
-        } else if (filter === "Popularité") {
+        } else if (filter == "Popularité") {
             if (a.likes > b.likes){
                 return -1;
             }

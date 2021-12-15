@@ -73,7 +73,7 @@
           "warn"
         ],
         "eqeqeq": [
-          "warn",
+          "ignore",
           "always",
           {
             "null": "ignore"

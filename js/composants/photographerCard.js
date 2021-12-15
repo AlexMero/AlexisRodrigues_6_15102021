@@ -38,7 +38,7 @@ export class PhotographerCard {
         // });
         this.domTarget.appendChild(this.DOM);
         document.querySelector("section.photographerCard div.container").appendChild(this.contentTag);
-        document.querySelector("#contactPopupBtn").addEventListener("click", this.contactClick);
+        document.querySelector("#contactPopupBtn").addEventListener("click", this.contactClick.bind(this));
     }
 
     contactClick(){

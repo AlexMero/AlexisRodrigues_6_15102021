@@ -68,7 +68,7 @@ export default class ContactPopup extends Component{
     }
 
     click(event){
-        if (event.path[0] === this.DOM || event.path.includes(this.crossContent)){
+        if (event.path[0] == this.DOM || event.path.includes(this.crossContent)){
             this.DOM.remove();
         }
     }

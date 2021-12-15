@@ -28,6 +28,7 @@ export default class heartBlock extends Component{
         super(domTarget, "span");
         this.hydrate(props);
         this.DOM.className = "likesMedia";
+        this.DOM.setAttribute("tabindex", "0");
         this.DOM.onclick = this.updateLikes.bind(this);
         this.render();
     }

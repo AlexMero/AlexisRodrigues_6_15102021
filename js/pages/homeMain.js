@@ -36,7 +36,7 @@ function render() {
                     showThis = "true";
                 }
             });
-            if (showThis === "true"){
+            if (showThis == "true"){
                 new HomePhotographerCard(photographer, DOM, listTag);
             }
         } else {
