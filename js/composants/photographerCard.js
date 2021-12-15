@@ -24,7 +24,7 @@ export class PhotographerCard {
 
         this.DOM.innerHTML = /* html */
         `
-            <img src='${this.idPhotoTarget}' class='imgPhotographer'>
+            <img src='${this.idPhotoTarget}' class='imgPhotographer' alt='${this.photographer.name}'>
             <button id="contactPopupBtn">Contactez-moi</button>
             <div class='container'>
                 <h2>${this.photographer.name}</h2>

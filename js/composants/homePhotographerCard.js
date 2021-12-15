@@ -16,6 +16,8 @@ export class HomePhotographerCard {
         this.listTag = listTag;
         this.DOM = document.createElement("article");
         this.DOM.setAttribute("tabindex", "0");
+        this.DOM.setAttribute("role", "button");
+        let ariaDescrption = "lien vers la page de " + this.photographer.name;
         this.DOM.classList.add("photographerCard");
         this.contentTag = document.createElement("div");
         this.contentTag.classList.add("contentTag");
@@ -26,7 +28,7 @@ export class HomePhotographerCard {
 
     render() {
         this.DOM.innerHTML = `
-            <img src='${this.idPhotoTarget}' class='imgPhotographer'>
+            <img src='${this.idPhotoTarget}' class='imgPhotographer' alt='${this.photographer.name}'>
             <h2>${this.photographer.name}</h2>
             <span class='location'>${this.photographer.city}, ${this.photographer.country}</span>
             <span class='tagline'>${this.photographer.tagline}</span>

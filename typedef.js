@@ -4,6 +4,7 @@
  * @property {Number} id             exemple 8520927,
  * @property {Number} photographerId exemple 82,
  * @property {String} title          exemple "Fashion Urban Jungle",
+ * @property {String} alt            exemple "Fashion Urban Jungle",
  * @property {String} [image]        exemple "Fashion_Urban_Jungle.jpg",
  * @property {String} [video]        exemple "Fashion_Urban_Jungle.mp4",
  * @property {Array}  tags

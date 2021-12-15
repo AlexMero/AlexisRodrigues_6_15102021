@@ -5,6 +5,8 @@ export default class MediaPopup extends Component{
 
     id;
 
+    alt;
+
     photographerId;
 
     title;
@@ -40,12 +42,15 @@ export default class MediaPopup extends Component{
         this.DOM.className = "mediaPopup";
 
         this.leftArrowContent = this.elementWithClass("span", "leftArrowContent iconContent");
+        this.leftArrowContent.setAttribute("role", "button");
         this.leftArrowContent.appendChild(this.elementWithClass("i", "fas fa-chevron-left"));
 
         this.rightArrowContent = this.elementWithClass("span", "rightArrowContent iconContent");
+        this.rightArrowContent.setAttribute("role", "button");
         this.rightArrowContent.appendChild(this.elementWithClass("i", "fas fa-chevron-right"));
 
         this.crossContent = this.elementWithClass("span", "crossContent iconContent");
+        this.crossContent.setAttribute("role", "button");
         this.crossContent.appendChild(this.elementWithClass("i", "fas fa-times"));
 
         this.DOM.onclick = this.click.bind(this);
@@ -69,7 +74,7 @@ export default class MediaPopup extends Component{
 
     get templateVideo() {
         return  /* html */ `
-        <video controls autoplay loop>
+        <video controls autoplay loop alt="${this.alt}">
             <source src="${this.videoTarget}" type="video/mp4">
             Sorry, your browser doesn't support embedded videos.
         </video>
@@ -80,7 +85,7 @@ export default class MediaPopup extends Component{
 
     get templateImage() {
         return /* html */ `
-        <img src="${this.imageTarget}" class="imgMediaPopup">
+        <img src="${this.imageTarget}" class="imgMediaPopup" alt="${this.alt}">
         <span class="titreMediaPopup">${this.title}</span>
         `;
     }
@@ -111,13 +116,13 @@ export default class MediaPopup extends Component{
 
     listenKey(evt){
         if (evt.keyCode == 39) {
-            // @ts-ignore
-            // console.log(this)
             this.updateMedia(this.nextID);
         }
         if (evt.keyCode == 37) {
-            // @ts-ignore
             this.updateMedia(this.prevID);
+        }
+        if (evt.keyCode == 27) {
+            this.DOM.remove();
         }
     }
 }

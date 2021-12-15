@@ -69,8 +69,8 @@ export default class MediaCard extends Component{
     }
 
     get templateVideo() {
-        return `
-        <video tabindex="0">
+        return /* html */ `
+        <video tabindex="0" alt="${this.media.alt}">
             <source src="${this.videoTarget}" type="video/mp4">
             Sorry, your browser doesn't support embedded videos.
         </video>
@@ -80,8 +80,8 @@ export default class MediaCard extends Component{
     }
 
     get templateImage() {
-        return `
-        <img src="${this.imageTarget}" class="imgMedia" tabindex="0">
+        return /* html */ `
+        <img src="${this.imageTarget}" class="imgMedia" tabindex="0" alt="${this.media.alt}">
         <span class="titreMedia">${this.title}</span>
         `;
     }
