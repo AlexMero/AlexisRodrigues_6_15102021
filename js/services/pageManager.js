@@ -39,9 +39,7 @@ export class PageManager{
         }
     }
 
-    /**
-     * [changePage description]
-     *
+    /*
      * @param   {String}  newPage  [newPage description]
      * @param   {Number}  [args]     [args description]
      *

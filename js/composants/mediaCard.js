@@ -39,8 +39,6 @@ export default class MediaCard extends Component{
     prevID;
 
     /**
-     * Constructeur card media in photographer page
-     *
      * @param   {HTMLElement}               domTarget             header HTMLElement
      * @param   {media & callbackFunction } media                 header HTMLElement
      * @param   {String}                    photographerName

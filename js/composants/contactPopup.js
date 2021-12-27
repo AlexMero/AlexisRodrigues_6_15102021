@@ -16,6 +16,12 @@ export default class ContactPopup extends Component{
 
     portrait;
 
+    /**
+     * @param   {HTMLElement}  domTarget  [domTarget description]
+     * @param   {Object}  props      [props description]
+     *
+     * @constructor
+     */
     constructor(domTarget, props){
         super(domTarget, "section");
         this.hydrate(props);

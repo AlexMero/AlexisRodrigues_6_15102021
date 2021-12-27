@@ -22,8 +22,6 @@ let totalLikes = 0;
 const divCardContent = document.createElement("div");
 
 /**
- * [async description]
- *
  * @param   {HTMLElement}  domTarget  [domTarget description]
  * @param   {Number}  photographerId  [domTarget description]
  *
@@ -41,6 +39,13 @@ export async function photographerMain(domTarget, photographerId) {
     fixedRectangleRender(domTarget);
 }
 
+/**
+ * Render
+ *
+ * @param   {HTMLElement}  domTarget
+ *
+ * @return  {void}
+ */
 function render(domTarget) {
     totalLikes = 0;
     divCardContent.innerHTML = "";
@@ -58,10 +63,24 @@ function render(domTarget) {
 
 }
 
+/**
+ * Specific fixedRectangle render 
+ *
+ * @param   {HTMLElement}  domTarget
+ *
+ * @return  {void}
+ */
 function fixedRectangleRender(domTarget){
     new FixedRectangle(domTarget, {"prix": photographerData.price, "totalLikes": totalLikes});
 }
 
+/**
+ * Specific sextionSelect render
+ *
+ * @param   {HTMLElement}  domTarget
+ *
+ * @return  {void}
+ */
 function sectionSelect(domTarget) {
     const sectionSelect = document.createElement("section");
     sectionSelect.classList.add("sectionSelect");
@@ -74,11 +93,28 @@ function sectionSelect(domTarget) {
     domTarget.appendChild(sectionSelect);
 }
 
+/**
+ * Callback from mediaCard > heartBlock > click
+ * Update like number
+ *
+ * @param   {Boolean}  inc
+ * @param   {HTMLElement}  target
+ *
+ * @return  {void}
+ */
 function updateLikes(inc, target){
     totalLikes+= inc ? 1 : -1;
     fixedRectangleRender(target);
 }
 
+/**
+ * Sort media by filter
+ *
+ * @param   {String}  filter  Dates/Titre/Popularité
+ * @param   {HTMLElement}  DOM
+ *
+ * @return  {void}          render()
+ */
 function updateFilter(filter, DOM){
     // eslint-disable-next-line complexity
     photographerMediaList.sort(function compare(a, b) {

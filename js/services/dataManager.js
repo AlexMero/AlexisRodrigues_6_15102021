@@ -76,6 +76,14 @@ async function getPhotographerMedia(id){
     return mediaList;
 }
 
+/**
+ * Get PopupMedia necessary datas
+ *
+ * @param   {Number}  photographerId
+ * @param   {Number}  mediaId
+ *
+ * @return  {Promise.<Object>}
+ */
 async function getPopupMedia(photographerId, mediaId){
     let mediaResult = {};
     let nextID = 0;

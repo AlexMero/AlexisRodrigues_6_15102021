@@ -7,8 +7,6 @@ let listFocused;
 let listTag = [];
 
 /**
- * [async description]
- *
  * @param   {HTMLElement}  domTarget  [domTarget description]
  *
  * @return  {Promise.<void>}             [return description]

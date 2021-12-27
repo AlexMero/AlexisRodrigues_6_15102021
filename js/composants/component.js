@@ -6,8 +6,6 @@ export default class Component{
     DOM;
 
     /**
-     * [constructor description]
-     *
      * @param   {HTMLElement}  domtarget  [domtarget description]
      * @param   {String}  tag        [tag description]
      *

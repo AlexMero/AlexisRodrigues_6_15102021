@@ -2,12 +2,10 @@ import { Tag } from "../composants/tag.js";
 
 export class HomePhotographerCard {
     /**
-     * Constructeur card photographer in homePage
-     *
      * @param   {Object}        photographer          Objet photographer
      * @param   {HTMLElement}   domTarget             header HTMLElement
      *
-     * @returns
+     * @constructor
      */
     constructor(photographer, domTarget, listTag = []) {
         this.photographer = photographer;

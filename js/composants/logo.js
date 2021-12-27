@@ -1,13 +1,11 @@
 export class Logo {
     /**
-     * Constructeur logo
-     *
      * @param   {Object}        img                   Objet img
      * @param   {String}        img.location          img address
      * @param   {String}        img.alt               img alt
      * @param   {HTMLElement}   domTarget             header HTMLElement
      *
-     * @returns
+     * @constructor
      */
     constructor(img, domTarget) {
         this.imgLocation = img.location;

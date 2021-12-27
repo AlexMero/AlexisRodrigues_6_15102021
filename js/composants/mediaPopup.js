@@ -28,8 +28,6 @@ export default class MediaPopup extends Component{
     prevID;
 
     /**
-     * [constructor description]
-     *
      * @param   {HTMLElement}   domTarget  [domTarget description]
      * @param   {Object}        props      [props description]
      *
@@ -90,6 +88,14 @@ export default class MediaPopup extends Component{
         `;
     }
 
+    /**
+     * Create an html element with a specific class name
+     *
+     * @param   {String}  tag        span
+     * @param   {String}  className  red
+     *
+     * @return  {HTMLElement}        <span class='red'></span>
+     */
     elementWithClass(tag, className){
         const result = document.createElement(tag);
         result.className = className;

@@ -14,8 +14,6 @@ export default class heartBlock extends Component{
     liked=false;
 
     /**
-     * [constructor description]
-     *
      * @param   {HTMLElement}       domTarget  [domTarget description]
      * @param   {Object}            props      fonction a appeler au
      * @param   {Function}          props.callback

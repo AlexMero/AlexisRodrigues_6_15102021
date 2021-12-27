@@ -2,12 +2,10 @@ import ContactPopup from "./contactPopup.js";
 
 export class PhotographerCard {
     /**
-     * Constructeur card photographer in homePage
-     *
      * @param   {Object}        photographer          Objet photographer
      * @param   {HTMLElement}   domTarget             header HTMLElement
      *
-     * @returns
+     * @constructor
      */
     constructor(photographer, domTarget) {
         this.photographer = photographer;

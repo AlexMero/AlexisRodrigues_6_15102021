@@ -1,8 +1,6 @@
 export class Dropdown{
 
     /**
-     * [constructor description]
-     *
      * @param   {HTMLElement}  domTarget  [domTarget description]
      * @param   {Array}  filters  [domTarget description]
      * @param   {Function}  callback  [domTarget description]
@@ -43,6 +41,14 @@ export class Dropdown{
 
     }
 
+    /**
+     * Create new filter element in dropdown
+     *
+     * @param   {String}  name     Popularité
+     * @param   {String}  chevron  <em class='fas fa-chevron-up'></em>
+     *
+     * @return  {void}           this.DOM.appendChild(filter)
+     */
     addFilter(name, chevron = ""){
         const filter = document.createElement("filter");
         filter.setAttribute("tabindex", "0");

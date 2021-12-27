@@ -6,8 +6,6 @@ export default class FixedRectangle extends Component {
     prix;
 
     /**
-     * [constructor description]
-     *
      * @param   {HTMLElement}   domTarget               [domTarget description]
      * @param   {Object}        props                   [props description]
      * @param   {Number}        props.totalLikes        [props description]

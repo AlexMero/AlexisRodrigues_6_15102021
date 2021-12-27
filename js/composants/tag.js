@@ -2,8 +2,6 @@ import { homeMain } from "../pages/homeMain.js";
 
 export class Tag{
     /**
-     * tag constructor
-     *
      * @param   {String}  content    [content description]
      * @param   {HTMLElement}  domTarget  [domTarget description]
      *
