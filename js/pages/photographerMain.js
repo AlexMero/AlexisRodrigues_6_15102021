@@ -2,7 +2,7 @@ import {getPhotographerData, getPhotographerMedia} from "../services/dataManager
 import {Dropdown} from "../composants/dropdown.js";
 import FixedRectangle from "../composants/fixedRectangle.js";
 import MediaCard from "../composants/mediaCard.js";
-import {PhotographerCard} from "../composants/PhotographerCard.js";
+import PhotographerCard from "../composants/PhotographerCard.js";
 
 let photographerData;
 

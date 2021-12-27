@@ -1,6 +1,6 @@
 import ContactPopup from "./contactPopup.js";
 
-export class PhotographerCard {
+export default class PhotographerCard {
     /**
      * @param   {Object}        photographer          Objet photographer
      * @param   {HTMLElement}   domTarget             header HTMLElement
